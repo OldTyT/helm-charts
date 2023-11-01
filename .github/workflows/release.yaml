@@ -53,6 +53,8 @@ jobs:
       - name: Push charts to GHCR
         run: |
           shopt -s nullglob
+          ls -la .cr-release-packages/
+          echo $GITHUB_REPOSITORY_OWNER
           for pkg in .cr-release-packages/*; do
             if [ -z "${pkg:-}" ]; then
               break
