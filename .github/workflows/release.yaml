@@ -53,11 +53,9 @@ jobs:
       - name: Push charts to GHCR
         run: |
           shopt -s nullglob
-          ls -la .cr-release-packages/
-          echo $GITHUB_REPOSITORY_OWNER
           for pkg in .cr-release-packages/*; do
             if [ -z "${pkg:-}" ]; then
               break
             fi
-            helm push "${pkg}" "oci://ghcr.io/${GITHUB_REPOSITORY_OWNER}/helm-charts"
+            helm push "${pkg}" "oci://ghcr.io/oldtyt/charts"
           done
