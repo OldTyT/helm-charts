@@ -1,0 +1,30 @@
+apiVersion: v1
+entries:
+  oldtyt-xyz:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-11-01T12:48:59.638018055Z"
+    description: A Helm chart for Kubernetes
+    digest: 86bebf89f5aaab929c5449f08c37413f1eff2cce03d605a41274d5410ae14b8b
+    name: oldtyt-xyz
+    type: application
+    urls:
+    - https://github.com/OldTyT/helm-charts/releases/download/oldtyt-xyz-0.1.0/oldtyt-xyz-0.1.0.tgz
+    version: 0.1.0
+  requestbin:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-11-01T12:48:59.872285786Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.13.2
+    description: A Helm chart for Kubernetes
+    digest: 7f1e3456c08847ad5c58f2e7ef7b7439dedc4e2d14916e4b78430c9fc22d2cd3
+    name: requestbin
+    type: application
+    urls:
+    - https://github.com/OldTyT/helm-charts/releases/download/requestbin-0.1.0/requestbin-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-11-01T12:48:59.872294686Z"
