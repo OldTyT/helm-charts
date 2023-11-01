@@ -1,11 +1,11 @@
-# Default values for requestbin.
+# Default values for oldtyt-xyz.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: ghcr.io/oldtyt/requestbin
+  repository: ghcr.io/oldtyt/oldtyt.xyz
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -41,7 +41,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8000
+  port: 80
 
 ingress:
   enabled: false
@@ -58,7 +58,6 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -97,33 +96,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-# Redis is included into this release for the convenience.
-# It is recommended to host it separately from this release
-redis:
-  enabled: true
-  auth:
-    existingSecret:
-
-externalRedis:
-  protocol:
-  host:
-  port:
-  database:
-  username:
-  password:
-  # Use an existing secret for the redis password
-  existingSecret:
-  # The key in the secret containing the redis password
-  passwordKey:
-
-  # SSL options
-  ssl_options:
-    enabled: false
-    # CA certificate
-    ca_certs:
-    # Client SSL certs
-    certfile:
-    keyfile:
-    # SSL verification mode: "cert_none" | "cert_optional" | "cert_required"
-    cert_reqs:

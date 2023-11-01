@@ -1,0 +1,19 @@
+---
+ingress:
+  enabled: true
+  className: "traefik"
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/rule-type: "PathPrefixStrip"
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-cloudflarewarp@kubernetescrd
+  hosts:
+    - host: oldtyt.xyz
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+image:
+  pullPolicy: Always
+
+env:
+  DEBUG: "True"
